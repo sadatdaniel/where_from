@@ -22,7 +22,7 @@ class _FullPageState extends State<FullPage> {
         title: Text(widget.title),
       ),
       body: FutureBuilder(
-        future: fetchService.make(),
+        future: fetchService.getCountries(),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(

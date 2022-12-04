@@ -36,20 +36,6 @@ class State {
       // currencySymbol: json["currency_symbol"],
     );
   }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = stateId;
-    data['country_id'] = countryId;
-    data['name'] = name;
-    data['country_code'] = countryCode;
-    data['country_name'] = countryName;
-    data['state_code'] = stateCode;
-    data['state_type'] = stateType;
-    data['latitude'] = stateLatitude;
-    data['longitude'] = stateLongitude;
-    return data;
-  }
 }
 
 class StateList {

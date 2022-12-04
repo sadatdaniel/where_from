@@ -42,24 +42,6 @@ class Country {
         subRegion: json['subregion'],
         tld: json['tld']);
   }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = id;
-    data['name'] = name;
-    data['iso3'] = iso3;
-    data['iso2'] = iso2;
-    data['phoneCode'] = phoneCode;
-    data['capital'] = capital;
-    data['currency'] = currency;
-    data['currency_name'] = currencyName;
-    data['currency_symbol'] = currencySymbol;
-    data['region'] = region;
-    data['subregion'] = subRegion;
-    data['tld'] = tld;
-    // data['states'] = states.map((state) => state.toJson).toList();
-    return data;
-  }
 }
 
 class CountryList {
