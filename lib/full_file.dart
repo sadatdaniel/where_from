@@ -1,8 +1,8 @@
-import 'package:every_where/model/state.dart' as k;
 import 'package:every_where/service/fetch_service.dart';
 import 'package:flutter/material.dart';
 
-import 'model/country.dart';
+// import 'model/country.dart';
+import 'model/country_state.dart' as countries;
 
 class FullPage extends StatefulWidget {
   const FullPage({super.key, required this.title});
@@ -22,7 +22,7 @@ class _FullPageState extends State<FullPage> {
         title: Text(widget.title),
       ),
       body: FutureBuilder(
-        future: fetchService.getCountries(),
+        future: fetchService.getCountryStates(),
         builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
@@ -30,7 +30,8 @@ class _FullPageState extends State<FullPage> {
             );
           } else if (snapshot.data != null) // check for null
           {
-            CountryList countryList = snapshot.data as CountryList;
+            countries.CountryStateList countryList =
+                snapshot.data as countries.CountryStateList;
             return ListView.separated(
                 itemBuilder: (context, index) {
                   // return DemoItem(position);
@@ -45,10 +46,6 @@ class _FullPageState extends State<FullPage> {
                     title: Text(countryList.countries[index].name),
                     onTap: () {
                       // print(countryList.countries[index].states.toString());
-                      for (k.State element
-                          in countryList.countries[index].states) {
-                        print(element.name);
-                      }
                     },
                   );
                 },

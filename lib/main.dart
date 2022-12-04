@@ -1,5 +1,4 @@
 import 'package:every_where/country_page.dart';
-import 'package:every_where/state_page.dart';
 import 'package:flutter/material.dart';
 
 import 'full_file.dart';
@@ -53,12 +52,12 @@ class _HomeState extends State<Home> {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const StateListPage(title: "States"),
-                  ),
-                );
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => const StateListPage(title: "States"),
+                //   ),
+                // );
               },
               child: const Text('States'),
             ),
